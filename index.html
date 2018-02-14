@@ -45,7 +45,7 @@ xhttp.send();
 
 
 function main(){
-    document.getElementById("cont").innerHTML = '<center><h1>Welcome '+user+'</h1><p>you are now logged in.</p></center><center><table><tr><th id="chats1" width="300" height="550"><button type="button" onclick="stopInterval(going);create_chat();">New Chat</button><h2>Your Chats:</h2><br/><div id="chats"> </div></th><th width="300" height="550" id="viewer"> <iframe width="300" id="iframer" src="blank.html"></iframe><input id="user" type="text"><button type="button" onclick="sendchat();">Send</button></th></tr></table></center>';
+    document.getElementById("cont").innerHTML = '<center><h1>Welcome '+user+'</h1><p>you are now logged in.</p></center><center><table><tr><th id="chats1" width="300" height="550"><button type="button" onclick="create_chat();">New Chat</button><h2>Your Chats:</h2><br/><div id="chats"> </div></th><th width="300" height="550" id="viewer"> <iframe width="300" id="iframer" src="blank.html"></iframe><input id="user" type="text"><button type="button" onclick="sendchat();">Send</button></th></tr></table></center>';
     current_cid = 0;
     going = setInterval(load_chats,1000);
     
