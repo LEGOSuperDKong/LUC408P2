@@ -7,23 +7,40 @@ Class Group Project For the Liberty University CSIS 408
 Created on 2/13/2018.
 
 Group:
-Leader&UIDesign: Elise
-Login&registration: Zack
-Connection&security: Patrick
-Message display: Willy
 
-implemented in html/css/js/php
+1: Leader&UIDesign: Elise
+
+2: Login&registration: Zack
+
+3: Connection&security: Patrick
+
+4: Message display: Willy
+
+
+Implemented in html/css/js/php
+
 
 IMPLEMENTED:
-  Basic Functionality
+
+  1: Basic Functionality
+  
   
 TODO:
-  Improve User Interface
-  Improve Application Error Handling.
-  Improve The Format of README.md
-  Create Mobile Version of Site.
-  Enable User Authentication at all points
+
+  1: Improve User Interface
+  
+  2: Improve Application Error Handling.
+  
+  3: Improve The Format of README.md
+  
+  4: Create Mobile Version of Site.
+  
+  5: Enable User Authentication at all points
+  
   
 BUGS:
-  Currently vunerable due to lack of proper authentication of users.
-  publically accessible files.
+
+  1: Currently vunerable due to lack of proper authentication of users.
+  
+  2: Publically accessible files.
+  
