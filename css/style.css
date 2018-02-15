@@ -1,0 +1,135 @@
+#video_background
+{
+    position:fixed;
+    right:0;
+    bottom:0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    
+}
+
+.picColor
+{   z-index: 6;
+    opacity:0.3; 
+    color:#FFFFFF;
+    width:1018px; 
+    height:1050px; 
+} 
+
+#container
+{
+    width: 1282px;
+    height: 1000px;
+}
+
+#header
+{
+    z-index: 50;
+    position:absolute;
+    height: 100px;
+    width: 1282px;
+    background-color: rgba(256,256,256,.5);
+    box-shadow: 0 0 2px 1px #555;
+
+}
+
+#header img
+{
+    z-index: 50;
+    width:20%;
+    top: 50%;
+    transform: translateY(-46%);
+}
+
+#header h1
+{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 10px;
+    float: right;
+    top: 50%;
+    transform: translateY(-50%);
+    right:50px;
+}
+
+#cover img
+{
+    z-index: 40;
+    width: 1282px;
+    margin-top: 100px;
+}
+
+#cover h1
+{
+    z-index: 50;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    letter-spacing:3px;
+    font-size: 50px;
+    bottom:660px;
+    text-align: center;
+}
+
+#cover h2
+{
+    z-index: 50;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    bottom: 650px;
+    text-align: center;
+}
+
+#cover p
+{
+    z-index: 50;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    bottom: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#album img
+{
+    z-index: 60;
+    width: 30%;
+    bottom: 1050px;
+    left: 50px;
+    box-shadow: 0 0 8px 1px #555;
+    
+}
+
+#cover button
+{
+    z-index: 60;
+    bottom: 630px;
+    left: 591px;
+    border: none;
+    display: inline-block;
+    padding: 16px 36px;
+    vertical-align: middle;
+    overflow: hidden;
+    color: #000;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    
+}
+
+#cover button:active
+{
+    opacity: 0.9;
+}
+
+#cover button:hover
+{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition: .5s;
+}
