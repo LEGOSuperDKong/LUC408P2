@@ -1,8 +1,29 @@
 # LUC408P2
-Project 2 - Chat App
+SKY CHAT
 
-Class Group Project For the Liberty University CSIS 408 class taught during spring 2018.
+Project 2 - Online/Mobile Chat Application
 
-Aqua Chat,
+Class Group Project For the Liberty University CSIS 408
+Created on 2/13/2018.
 
-Chat application implemented in html/css/js/php
+Group:
+Leader&UIDesign: Elise
+Login&registration: Zack
+Connection&security: Patrick
+Message display: Willy
+
+implemented in html/css/js/php
+
+IMPLEMENTED:
+  Basic Functionality
+  
+TODO:
+  Improve User Interface
+  Improve Application Error Handling.
+  Improve The Format of README.md
+  Create Mobile Version of Site.
+  Enable User Authentication at all points
+  
+BUGS:
+  Currently vunerable due to lack of proper authentication of users.
+  publically accessible files.
