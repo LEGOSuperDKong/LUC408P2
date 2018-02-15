@@ -1,3 +1,6 @@
+<html>
+<head>
+<meta charset="UTF-8">
 <?php
 if (isset($_GET['id'])) {
 $id = $_GET['id'];}
@@ -8,6 +11,8 @@ $cid = $_GET['cid'];}
 echo '<script>url = "viewer.php?id='.$id.'&cid='.$cid.'&password='.$password.'";</script>';
 ?>
 <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
 <div id="contx"></div>
 <script>
 function getcont(){
@@ -47,3 +52,5 @@ getcont();
 update_pos();
 setInterval(update_content, 1000);
 </script>
+</body>
+</html>
