@@ -18,29 +18,3 @@ Group:
 
 
 Implemented in html/css/js/php
-
-
-IMPLEMENTED:
-
-  1: Basic Functionality
-  
-  
-TODO:
-
-  1: Improve User Interface
-  
-  2: Improve Application Error Handling.
-  
-  3: Improve The Format of README.md
-  
-  4: Create Mobile Version of Site.
-  
-  5: Enable User Authentication at all points
-  
-  
-BUGS:
-
-  1: Currently vunerable due to lack of proper authentication of users.
-  
-  2: Publically accessible files.
-  
