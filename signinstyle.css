@@ -112,12 +112,12 @@ h2{
 }
 #cont{
     position: relative;
-    top: 42%;
+    top: 46%;
     transform: translateY(-50%);
 }
 #login_form{
     background-color: rgba(256,256,256,.85);
-    margin-top: 25px;
+    top: -200px;
     padding: 8px;
     width:350px;
     border-radius: 25px;

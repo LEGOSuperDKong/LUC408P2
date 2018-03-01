@@ -28,7 +28,7 @@
         <div id = "head">
             <img id ="logo" src='css/images/logo.png'>
         </div>
-        <div id="cont">
+        <div id = "cont">
             <div id="login_form">
                 <form onsubmit="login();return false">
                     <br/>
@@ -92,45 +92,9 @@ xhttp.send();
 
 
 function main(){
-    //backslash '\\' can make strings multiline for javascript
+    //backslash '' can make strings multiline for javascript
     document.getElementById("cont").innerHTML = 
-        '<div id="contain">\
-    <div class="row">\
-        <div class="col">\
-            <h1>Welcome, '+user+'</h1>\
-        </div>\
-    </div>\
-    <div class="row">\
-        <div class="col-3"></div>\
-    
-        <div class="col-3 chat" >\
-                <h2 id = "yourchat">Your Chats</h2>\
-                <button id = "createnewchat" type="button" onclick="create_chat();" class="btn btn-success">Create New Chat</button>\
-            <br/>\
-                <div id="chats"></div>\
-        
-        </div>\
-    
-        <div class="col-3 chat" >\
-    
-            <div id = "iframecontainer">\
-                <iframe class = "blankblank" id="iframer" src="blank.html"></iframe>\
-            </div>\
-            <form id = "sendchat" onsubmit="sendchat();return false" class="form-inline">\
-                <div class="form-group mb-2">\
-                    <input type="text" class="form-control" id="user" placeholder="Message">\
-                </div>\
-                <button type="submit" class="btn btn-primary mb-2">Send</button>\
-            </form>\
-        <form method="post" action="upload-page.php" enctype="multipart/form-data">\
-            <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />\
-            <input type = "submit" value = "upload!" />\
-            </form>\
-        
-        </div>\
-        <div class="col-3"></div>\
-    </div>\
-</div>'
+        '<div class="row"><div class="col"><h1>Welcome, '+user+'</h1></div></div><div class="row"><div class="col"></div><div class="col-3 chat" ><h2 id = "yourchat">Your Chats</h2><button id = "createnewchat" type="button" onclick="create_chat();" class="btn btn-success">Create New Chat</button><br/><div id="chats"></div></div><div class="col-3 chat" ><div id = "iframecontainer"><iframe id="iframer" src="blank.html"></iframe></div><form id = "sendchat" onsubmit="sendchat();return false" class="form-inline"><div class="form-group mb-2"><input type="text" class="form-control" id="user" placeholder="Message"></div><button type="submit" class="btn btn-primary mb-2">Send</button></form><form method="post" action="upload-page.php" enctype="multipart/form-data"><input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" /><input type = "submit" value = "upload!" /></form></div><div class="col"></div></div>'
 
     current_cid = 0;
     going = setInterval(load_chats,1000);
@@ -141,21 +105,7 @@ function create_chat(){
 	clearInterval(going);
     //code here to create the new chat window.
 document.getElementById("cont").innerHTML = 
-    '<div id="login_form">\
-        <form onsubmit="create();main();return false">\
-            <br/>\
-            <div class="form-group">\
-            <label for="exampleInputEmail1">Username</label>\
-            <input type="username_input" class="form-control" id="users" placeholder="Enter usernames, comma seperated.">\
-            </div>\
-            <div class="form-group">\
-                <label for="exampleInputPassword1">Chat Name</label>\
-                <input type="text" class="form-control" id="namer" placeholder="Name for chat group">\
-                <small id="password_tip" class="form-text text-muted">You cant change the group names at this time.</small>\
-            </div>\
-            <button type="submit" class="btn btn-primary" >Create Chat</button>\
-        </form>\
-    </div>';
+    '<div id="login_form"><form onsubmit="create();main();return false"><br/><div class="form-group"><label for="exampleInputEmail1">Username</label><input type="username_input" class="form-control" id="users" placeholder="Enter usernames, comma seperated."></div><div class="form-group"><label for="exampleInputPassword1">Chat Name</label><input type="text" class="form-control" id="namer" placeholder="Name for chat group"><small id="password_tip" class="form-text text-muted">You cant change the group names at this time.</small></div><button type="submit" class="btn btn-primary" >Create Chat</button></form></div>';
 }
     
 function create(){
@@ -164,7 +114,7 @@ function create(){
     users = document.getElementById("users").value;
     users = ","+users+",";
     users = ","+user+users;
-	users = users.replace(/\\s+/g, '');
+	users = users.replace(/s+/g, '');
     //users = users.replace(/,/g, "%");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
