@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
     <title>SkyChat</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link href="css/signinstyle.css" rel="stylesheet">
+    
     <link href="css/reset.css" rel="stylesheet">
-    <link href="css/script.js" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <link href="css/signinstyle.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body background="images/VISUALS_Lr_2-59-X3.jpg">
-<div width="100%" style="background-color:rgba(256,256,256,.65);height:10%;">
-    <img style="position:absolute; TOP:5px; LEFT:20px; height:90%;" src="images/logo.png">
-</div>
-<div id="cont"><center>
-<div id="login_form" style="background-color: rgba(256,256,256,.85);width:350px;margin-top:25px;border-radius: 25px;">
-<form onsubmit="login();return false">
-<br/>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Username</label>
-    <input type="username_input" class="form-control" id="user" placeholder="Enter your username.">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="pass" placeholder="Password">
-	<small id="password_tip" class="form-text text-muted">We will never ask for your password.</small>
-  </div>
-  <button type="submit" class="btn btn-primary">Login</button><button style="margin-left:10px;" onclick="register();" title="Need an Account?" type="register" class="btn btn-primary">Register</button></form>
-</div></center>
-</div>
+<body>
+    <video loop id="video_background" muted autoplay class="picColor">
+    <source src="css/images/Clouds%20-%206330.mp4">
+    </video>
+    <div id = "container">
+        <!-- This is for the logo in the top corner -->
+        <div id = "head">
+            <img id ="logo" src='css/images/logo.png'>
+        </div>
+        <div id="cont">
+            <div id="login_form">
+                <form onsubmit="login();return false">
+                    <br/>
+        <div class="form-group">
+            <label id = "usernamelogin" for="exampleInputEmail1">Username</label>
+            <input type="username_input" class="form-control" id="user" placeholder="Enter your username.">
+        </div>
+        <div class="form-group">
+            <label id = "passwordlogin" for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="pass" placeholder="Password">
+            <small id="password_tip" class="form-text text-muted">We will never ask for your password.</small>
+        </div>
+                    <!-- This is to contain the buttons to center them together -->
+            <div id = "buttonholder">
+                        <button type="submit" id = "logbutton" class="btn btn-primary">Login</button>
+                        <button onclick="register();" title="Need an Account?" type="register" id = "passbutton" class="btn btn-primary">Register</button>
+                </div>
+                    </form>
+                    
+            </div>
+        </div>
+    </div>
+    
 <script>
+    
 function login(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -56,6 +73,7 @@ pass = document.getElementById("pass").value;
 xhttp.open("GET", "user_login.php?id="+user+"&pass="+pass, true);
 xhttp.send();
 }
+    
 function load_chats(){
 //code here to load the chats.
 var xhttp = new XMLHttpRequest();
@@ -74,24 +92,79 @@ xhttp.send();
 
 
 function main(){
-    document.getElementById("cont").innerHTML = '<div id="container" style="margin-top:25px;"><div class="row"><div class="col"><center><h1 style="font-family: Montserrat, sans-serif;letter-spacing: 10px;">Welcome, '+user+'</h1></center></div></div><div class="row" style="margin-top:25px;"><div class="col-3"></div><div class="col-3"><div style="background-color:rgba(256,256,256,.65);border-radius:25px;"><button style="margin-top:10px;margin-left:10px;margin-bottom:10px;" type="button" class="btn btn-info">Your Chats:</button><button type="button" style="margin-bottom:10px;margin-top:10px;margin-left:10px;" onclick="create_chat();" class="btn btn-success">Create New Chat</button><br/><div id="chats"></div></div></div><div class="col"><div style="background-color:rgba(256,256,256,.65);border-radius:25px;"><div style="border-radius: 10px;overflow: hidden;background-color:white;"><iframe style="min-width:200px;height:450px;width:100%;" id="iframer" src="blank.html"></iframe></div><form style="margin-left:15px;" onsubmit="sendchat();return false" class="form-inline"><div class="form-group mb-2"><input type="text" class="form-control" id="user" placeholder="Message"></div><button type="submit" class="btn btn-primary mb-2">Send</button></form><form method="post" action="upload-page.php" enctype="multipart/form-data"> <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" /><input type = "submit" value = "upload!" /></form></div></div><div class="col"></div></div></div>'
+    //backslash '\\' can make strings multiline for javascript
+    document.getElementById("cont").innerHTML = 
+        '<div id="contain">\
+    <div class="row">\
+        <div class="col">\
+            <h1>Welcome, '+user+'</h1>\
+        </div>\
+    </div>\
+    <div class="row">\
+        <div class="col-3"></div>\
+    
+        <div class="col-3 chat" >\
+                <h2 id = "yourchat">Your Chats</h2>\
+                <button id = "createnewchat" type="button" onclick="create_chat();" class="btn btn-success">Create New Chat</button>\
+            <br/>\
+                <div id="chats"></div>\
+        
+        </div>\
+    
+        <div class="col-3 chat" >\
+    
+            <div id = "iframecontainer">\
+                <iframe class = "blankblank" id="iframer" src="blank.html"></iframe>\
+            </div>\
+            <form id = "sendchat" onsubmit="sendchat();return false" class="form-inline">\
+                <div class="form-group mb-2">\
+                    <input type="text" class="form-control" id="user" placeholder="Message">\
+                </div>\
+                <button type="submit" class="btn btn-primary mb-2">Send</button>\
+            </form>\
+        <form method="post" action="upload-page.php" enctype="multipart/form-data">\
+            <input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" />\
+            <input type = "submit" value = "upload!" />\
+            </form>\
+        
+        </div>\
+        <div class="col-3"></div>\
+    </div>\
+</div>'
 
     current_cid = 0;
     going = setInterval(load_chats,1000);
     
 }
+    
 function create_chat(){
 	clearInterval(going);
     //code here to create the new chat window.
-document.getElementById("cont").innerHTML = '<center><div id="login_form" style="background-color: rgba(256,256,256,.85);width:350px;margin-top:25px;border-radius: 25px;"><form onsubmit="create();main();return false"><br/><div class="form-group"><label for="exampleInputEmail1">Username</label><input type="username_input" class="form-control" id="users" placeholder="Enter usernames, comma seperated."></div><div class="form-group"><label for="exampleInputPassword1">Chat Name</label><input type="text" class="form-control" id="namer" placeholder="Name for chat group"><small id="password_tip" class="form-text text-muted">You cant change the group names at this time.</small></div><button type="submit" class="btn btn-primary" >Create Chat</button></form></div></center>';
+document.getElementById("cont").innerHTML = 
+    '<div id="login_form">\
+        <form onsubmit="create();main();return false">\
+            <br/>\
+            <div class="form-group">\
+            <label for="exampleInputEmail1">Username</label>\
+            <input type="username_input" class="form-control" id="users" placeholder="Enter usernames, comma seperated.">\
+            </div>\
+            <div class="form-group">\
+                <label for="exampleInputPassword1">Chat Name</label>\
+                <input type="text" class="form-control" id="namer" placeholder="Name for chat group">\
+                <small id="password_tip" class="form-text text-muted">You cant change the group names at this time.</small>\
+            </div>\
+            <button type="submit" class="btn btn-primary" >Create Chat</button>\
+        </form>\
+    </div>';
 }
+    
 function create(){
     //code here to actually create it.
     namex = document.getElementById("namer").value;
     users = document.getElementById("users").value;
     users = ","+users+",";
     users = ","+user+users;
-	users = users.replace(/\s+/g, '');
+	users = users.replace(/\\s+/g, '');
     //users = users.replace(/,/g, "%");
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -103,6 +176,8 @@ xhttp.send();
 
     
 }
+    
+    
 function switchchat(idx){
     current_cid = idx;
     document.getElementById('iframer').src = "view.php?id="+user+"&cid="+idx+"&password="+pass;
@@ -118,6 +193,7 @@ eval(this.responseText);
 xhttp.open("GET", "user_registration.php?id="+document.getElementById("user").value+"&pass="+document.getElementById("pass").value, true);
 xhttp.send();
 }
+    
 function sendchat(){
 text = document.getElementById("user").value;
 document.getElementById("user").value = "";
@@ -130,6 +206,7 @@ xhttp.open("GET", "send_chat.php?id="+user+"&pass="+pass+"&cid="+current_cid+"&m
 xhttp.send();
     
 }
+    
 function setCookie(cname,cvalue,exdays) {//save the value to a cookie in a file.
             var d = new Date();
             d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -158,5 +235,6 @@ function setCookie(cname,cvalue,exdays) {//save the value to a cookie in a file.
 current = "";
 checkCookie();
 </script>
+
 </body>
 </html>
