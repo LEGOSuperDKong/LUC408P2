@@ -219,7 +219,7 @@ function post()
       console.log("success yeah");
       document.getElementById("secondAttempt").innerHTML = '';
  document.getElementById("preview").src = '';
-    getElementByID("user").value = reader.result;
+    document.getElementByID("user").value = reader.result;
       reader.result = '';
     }
   else
