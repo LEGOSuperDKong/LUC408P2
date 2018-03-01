@@ -53,7 +53,10 @@
     </div>
     
 <script>
-    
+function logout(){
+setCookie("username", "", .0000001);
+setCookie("password", "", .0000001);
+window.location="signin.html";}
 function login(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
@@ -94,7 +97,7 @@ xhttp.send();
 function main(){
     //backslash '' can make strings multiline for javascript
     document.getElementById("cont").innerHTML = 
-        '<div class="row"><div class="col"><h1>Welcome, '+user+'</h1></div></div><div class="row"><div class="col"></div><div class="col-3 chat" ><h2 id = "yourchat">Your Chats</h2><button id = "createnewchat" type="button" onclick="create_chat();" class="btn btn-success">Create New Chat</button><br/><div id="chats"></div></div><div class="col-3 chat" ><div id = "iframecontainer"><iframe id="iframer" src="blank.html"></iframe></div><form id = "sendchat" onsubmit="sendchat();return false" class="form-inline"><div class="form-group mb-2"><input type="text" class="form-control" id="user" placeholder="Message"></div><button type="submit" class="btn btn-primary mb-2">Send</button></form><form method="post" action="upload-page.php" enctype="multipart/form-data"><input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" /><input type = "submit" value = "upload!" /></form></div><div class="col"></div></div>'
+        '<div class="row"><div class="col"><h1>Welcome, '+user+'</h1><button onclick="logout();" title="ready to logout?" type="logout" class="btn btn-primary">Log Out</button></div></div><div class="row"><div class="col"></div><div class="col-3 chat" ><h2 id = "yourchat">Your Chats</h2><button id = "createnewchat" type="button" onclick="create_chat();" class="btn btn-success">Create New Chat</button><br/><div id="chats"></div></div><div class="col-3 chat" ><div id = "iframecontainer"><iframe id="iframer" src="blank.html"></iframe></div><form id = "sendchat" onsubmit="sendchat();return false" class="form-inline"><div class="form-group mb-2"><input type="text" class="form-control" id="user" placeholder="Message"></div><button type="submit" class="btn btn-primary mb-2">Send</button></form><form method="post" action="upload-page.php" enctype="multipart/form-data"><input name="filesToUpload[]" id="filesToUpload" type="file" multiple="" /><input type = "submit" value = "upload!" /></form></div><div class="col"></div></div>'
 
     current_cid = 0;
     going = setInterval(load_chats,1000);
