@@ -15,12 +15,16 @@ echo '<script>url = "viewer.php?id='.$id.'&cid='.$cid.'&password='.$password.'";
 <body>
 <div id="contx"></div>
 <script>
+function rl(text) {
+    var exp = /(\b(https?|ftp|file):\/\/([-A-Z0-9+&@#%?=~_|!:,.;]*)([-A-Z0-9+&@#%?\/=~_|!:,.;]*)[-A-Z0-9+&@#\/%=~_|])/ig;
+    return text.replace(exp, "<a href='$1' target='_blank'>$3</a>");
+}
 function getcont(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
-    con = this.responseText;
-    cony = this.responseText;
+    con = rl(this.responseText);
+    cony = rl(this.responseText);
     document.getElementById("contx").innerHTML = con;
 }
 };
@@ -32,7 +36,7 @@ function update_content(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
-    conx = this.responseText;
+    conx = rl(this.responseText);
     if (conx != cony){
         cony = conx;
         document.getElementById("contx").innerHTML = conx;
