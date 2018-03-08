@@ -155,7 +155,8 @@ xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
 }
 };
-xhttp.open("GET", "send_chat.php?id="+user+"&pass="+pass+"&cid="+current_cid+"&msg="+text, true);
+urlx = "send_chat.php?id="+user+"&pass="+pass+"&cid="+current_cid+"&msg="+encodeURI(text);
+xhttp.open("GET", urlx, true);
 xhttp.send();
     
 }
@@ -219,13 +220,24 @@ function post()
       console.log("success yeah");
       document.getElementById("secondAttempt").innerHTML = '';
  document.getElementById("preview").src = '';
-    document.getElementById("user").value = reader.result;
+    sendimage(reader.result);
       reader.result = '';
     }
   else
     {
       console.log("ERROR: EMPTY IMAGE SUBMISSION");
     }
+}
+function sendimage(textx){
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+}
+};
+urlx = "send_img.php?id="+user+"&pass="+pass+"&cid="+current_cid+"&msg="+encodeURIComponent(textx);
+xhttp.open("GET", urlx, true);
+xhttp.send();
+    
 }
 </script>
 

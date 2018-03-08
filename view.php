@@ -23,6 +23,7 @@ function getcont(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
+    //this.responseText = decodeURI(this.responseText);
     con = rl(this.responseText);
     cony = rl(this.responseText);
     document.getElementById("contx").innerHTML = con;
@@ -36,6 +37,8 @@ function update_content(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
+    //this.responseText = decodeURI(this.responseText);
+    console.log(this.responseText);
     conx = rl(this.responseText);
     if (conx != cony){
         cony = conx;

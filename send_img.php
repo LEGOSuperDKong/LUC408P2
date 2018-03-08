@@ -8,7 +8,7 @@ $cid = $_GET['cid'];}
 if (isset($_GET['msg'])) {
 $msg = $_GET['msg'];}
 $file = fopen("messages.ac", "a");
-fwrite($file,$cid."☺".$id."☺".urldecode($msg)."\n");
+fwrite($file,$cid."☺".$id."☺<img src='".rawurldecode($msg)."'>\n");
 fclose($file);
 echo "Sent";
 ?>
