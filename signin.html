@@ -57,7 +57,11 @@ function logout(){
 setCookie("username", "", .0000001);
 setCookie("password", "", .0000001);
 window.location="signin.html";}
+
 function login(){
+user = document.getElementById("user").value;
+pass = document.getElementById("pass").value;
+if (user != ""){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
 if (this.readyState == 4 && this.status == 200) {
@@ -71,11 +75,11 @@ if(this.responseText == "true"){
 }
 }
 };
-user = document.getElementById("user").value;
-pass = document.getElementById("pass").value;
 xhttp.open("GET", "user_login.php?id="+user+"&pass="+pass, true);
 xhttp.send();
-}
+}else{
+    alert("username cannot be null.");
+}}
     
 function load_chats(){
 //code here to load the chats.
